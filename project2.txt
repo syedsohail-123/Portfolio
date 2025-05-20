@@ -1,0 +1,54 @@
+📄 Static Website Deployment Using Docker and Kubernetes
+📝 Overview
+Developed and deployed a highly portable static web application using Docker for containerization and Kubernetes for orchestration. The website was served using NGINX and built with standard HTML/CSS, ensuring fast, scalable, and repeatable deployment across environments.
+
+🔧 Tech Stack
+Docker – Containerization of the static website
+
+Kubernetes – Deployment and orchestration
+
+NGINX – Web server to serve static files
+
+HTML/CSS – Front-end of the web application
+
+💡 Key Contributions
+Containerized a static HTML/CSS website using a lightweight NGINX-based Docker image
+
+Authored a Dockerfile to define build instructions for a production-ready image
+
+Created Kubernetes deployment and service YAML manifests to manage pods and expose the application
+
+Tested deployment locally using Minikube (or any Kubernetes cluster)
+
+Ensured scalability and fault tolerance using Kubernetes’ built-in features
+
+📁 Project Structure
+pgsql
+Copy
+Edit
+project-root/
+├── Dockerfile
+├── index.html
+├── styles.css
+├── kubernetes/
+│   
+Dockerfile
+FROM nginx: alpine
+COPY . /usr/share/nginx/share
+EXPOSE 80
+CMD ['nginx', '-g', 'daemon off';]
+ḍocker commands:
+docker build -t tempreture converter .
+docker run --d --name container_name -p 8080:80 docker_image_id
+docker ps 
+docker image ls
+docker build -t tempreture:1 .
+docker push syedsohail746/tempreture:1
+Kubernets commands
+minikube start
+kubectl create deployment tempreture converter docker_image_id
+kubectl get pods
+kubectl get deployments
+minikube dashboard
+kubectl services deployment tempreture converter --type LoadBalancer  --port 80
+minikube service tempreture converter 
